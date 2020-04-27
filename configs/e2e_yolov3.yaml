@@ -1,0 +1,24 @@
+MODEL:
+  META_ARCHITECTURE: "Onestage"
+#  WEIGHT: "/media/w/Data/yolov3_output/output4/model_0001000.pth"
+  BACKBONE:
+    CONV_BODY: "YOLOV3"
+  YOLOV3:
+    FG_IOU_THRESHOLD: 0.7
+    BG_IOU_THRESHOLD: 0.5
+
+
+DTYPE: "float32"
+
+DATASETS:
+  TRAIN: ("coco_2017_train", )
+  TEST: ("coco_2017_minival",)
+SOLVER:
+  BASE_LR: 0.001
+  IMS_PER_BATCH: 16
+  WEIGHT_DECAY: 0.0005
+  CHECKPOINT_PERIOD: 5000
+  STEPS: (400000, 450000)
+  MAX_ITER: 500200
+
+OUTPUT_DIR: "/media/w/Data/yolov3_output/output"
